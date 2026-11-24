@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LOGIN PAGE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body{
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to bottom right, #ffbad6, #ffd2e8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .err {
+            color: #b20000;
+            font-size: 1rem;
+            height: 20px;
+            margin-top: 5px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="heart" style="left: 10%; animation-duration: 6s;"></div>
+<div class="heart" style="left: 25%; animation-duration: 7s;"></div>
+<div class="heart" style="left: 40%; animation-duration: 5.5s;"></div>
+<div class="heart" style="left: 60%; animation-duration: 6.7s;"></div>
+<div class="heart" style="left: 75%; animation-duration: 7.5s;"></div>
+<div class="heart" style="left: 90%; animation-duration: 6.1s;"></div>
+
+<form onsubmit="return checkPassword()">
+    <h1>Enter Password 💗</h1>
+
+    <input type="password" id="password" placeholder="clue: month, date & year" required>
+
+    <div class="err" id="error"></div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function checkPassword() {
+        const correct = "december 1 2005";       
+        const userPass = document.getElementById("password").value;
+
+        if (userPass === correct) {
+            window.location.href = "page1.html";   
+            return false; 
+        } else {
+            document.getElementById("error").textContent = "Incorrect Password, Love";
+            return false; 
+        }
+    }
+</script>
+
+</body>
+</html>
